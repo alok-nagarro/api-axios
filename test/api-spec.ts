@@ -1,11 +1,8 @@
 import axios from "axios";
 import { ApiHelper } from "../utils/api-helper";
-import * as bookData from "../json-data/response-bodies/book_data.json";
 import { IAgeResponseDataType, IBook } from "../utils/interfaces";
 import * as data from "../json-data/request-bodies/test-data.json";
-require("dotenv").config();
 const apiHelper = new ApiHelper();
-const getBooksRequestData: IBook = bookData;
 
 describe("GET books endpoint ==> ", () => {
   let getResponse: any, responseData: IAgeResponseDataType;

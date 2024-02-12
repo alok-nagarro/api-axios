@@ -22,7 +22,7 @@ export default async (): Promise<Config.InitialOptions> => {
       ],
     ],
     verbose: true,
-    setupFilesAfterEnv: ["./jest.setup.js"],
+    setupFilesAfterEnv: ["./jest.setup.ts"],
     globalSetup: "./jest.globalSetup.ts",
   };
 };
