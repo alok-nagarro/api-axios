@@ -1,16 +1,15 @@
 import axios from "axios";
 import { ApiHelper } from "../utils/api-helper";
-import { IAgeResponseDataType, IBook } from "../utils/interfaces";
-import * as data from "../json-data/request-bodies/test-data.json";
+import { IAgeResponseDataType } from "../utils/interfaces";
+import { nameData } from "../json-data/request-bodies/test-data";
 const apiHelper = new ApiHelper();
 
 describe("GET books endpoint ==> ", () => {
   let getResponse: any, responseData: IAgeResponseDataType;
   beforeAll(async () => {
     getResponse = await axios.request(
-      await apiHelper.getAge(data.positiveTest.name)
+      await apiHelper.getAge(nameData.positiveTest.name)
     );
-
     // console.log("🚀 ~ beforeAll ~ getResponse: ", await getResponse.data);
     responseData = getResponse.data;
   });
@@ -23,7 +22,7 @@ describe("GET books endpoint ==> ", () => {
   });
 
   it("Name in the response matches with the name passe in the request", () => {
-    expect(responseData.name).toBe(data.positiveTest.name);
+    expect(responseData.name).toBe(nameData.positiveTest.name);
   });
   it("return expected response properties", async () => {
     expect(getResponse.data).toMatchObject({

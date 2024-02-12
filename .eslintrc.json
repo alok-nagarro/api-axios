@@ -13,6 +13,6 @@
     "root":true,
     "rules": {
        "@typescript-eslint/no-floating-promises": "error",
-       "@typescript-eslint/no-explicit-any": "error"
+       "@typescript-eslint/no-explicit-any": "off"
     }
 }

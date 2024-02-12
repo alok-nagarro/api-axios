@@ -1,7 +1,6 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import * as chalk from "chalk";
-import { ApiHelper } from "./api-helper";
-import * as data from "../json-data/request-bodies/test-data.json";
+import { nameData } from "../json-data/request-bodies/test-data";
 const maxRetry = parseInt(process.env.MAX_HEALTH_RETRY);
 
 export class BaseLibrary {
@@ -12,7 +11,7 @@ export class BaseLibrary {
     // process.env.NODE_TLS_REJECT_UNAUTHORIZED=0;
     const config: any = {
       //Below endpoint will be replaced with a proper /health or /ping endpoint
-      url: `${process.env.DEMOQA_URL}?name=${data.positiveTest.name}`,
+      url: `${process.env.DEMOQA_URL}?name=${nameData.positiveTest.name}`,
     };
     for (let i = 0; i < maxRetry; i++) {
       healthCheckResponse = await axios.request(config);

@@ -39,3 +39,12 @@ export type IBook = {
   description: string;
   website: string;
 };
+
+export type nameTestData = {
+  positiveTest: {
+    name: string;
+  };
+  negativeTest: {
+    name: string;
+  };
+};
