@@ -40,11 +40,11 @@ export type IBook = {
   website: string;
 };
 
-export type nameTestData = {
-  positiveTest: {
-    name: string;
-  };
-  negativeTest: {
-    name: string;
-  };
-};
+export interface nameTestData {
+  name: string;
+}
+
+export interface testType {
+  positiveTest: nameTestData;
+  negativeTest: nameTestData;
+}
