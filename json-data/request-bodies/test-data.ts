@@ -1,6 +1,6 @@
-import { nameTestData } from "../../utils/interfaces";
+import { testType } from "../../utils/interfaces";
 
-export const nameData: nameTestData = {
+export const nameTestData: testType = {
   positiveTest: {
     name: "James",
   },
